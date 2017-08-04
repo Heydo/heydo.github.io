@@ -259,6 +259,132 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/04/sorting-function/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/04/sorting-function/" itemprop="url">Untitled</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-04T11:30:30+08:00">
+                2017-08-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="慕课上的例子："><a href="#慕课上的例子：" class="headerlink" title="慕课上的例子："></a>慕课上的例子：</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sortNum</span>(<span class="params">a,b</span>) </span>&#123;</div><div class="line"><span class="keyword">return</span> a - b; <span class="comment">//升序，如降序，把“a - b”该成“b - a”</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> myarr = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">"80"</span>,<span class="string">"16"</span>,<span class="string">"50"</span>,<span class="string">"6"</span>,<span class="string">"100"</span>,<span class="string">"1"</span>);</div><div class="line"><span class="built_in">document</span>.write(myarr + <span class="string">"&lt;br&gt;"</span>);</div><div class="line"><span class="built_in">document</span>.write(myarr.sort(sortNum));</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<p>####首先，return 是返回一个值到函数外，在调用函数的地方能够接收这个值，在这里，return 返回的是 a-b 的值。</p>
+<h4 id="第二个问题，a-和-b-是怎么回事。"><a href="#第二个问题，a-和-b-是怎么回事。" class="headerlink" title="第二个问题，a 和 b 是怎么回事。"></a>第二个问题，a 和 b 是怎么回事。</h4><p>我们看到 sortNum 函数的调用形式，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">myarr.sort(sortNum)</div></pre></td></tr></table></figure>
+<p>是将 sortNum 作为参数传到 sort 函数中，而 sort 函数是<strong>系统自带的数组函数</strong>，由系统实现函数功能。</p>
+<p>sortNum 函数要带两个参数也是系统所规定好的，在进行排序时，系统会按顺序（从下标 0 一个个往后），将数组中的元素作为 a 和 b 参数传入 sortNum 中。</p>
+<p>比如，数组myarr，第一次传入下标 0 元素 myarr[0] 作为 a，下标 1 元素 myarr[1] 作为 b，算出 a-b 的值，&lt;=-1 则 a 在 b 前面，==0 则顺序不变，&gt;=1 则 b 在前 a 在后。比较完 myarr[0] 和 myarr[1]，向后移一位，进行 myarr[1] 和 myarr[2] 的比较，这时，myarr[1] 是 a，myarr[2] 是 b，以此类推。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/04/test-my-site/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -539,7 +665,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
