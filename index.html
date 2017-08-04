@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="">
+<html class="theme-next pisces use-motion" lang="zh-cn">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -95,11 +95,12 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="Heydo">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="Heydo">
+<meta property="og:locale" content="zh-cn">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="Heydo">
 
 
 
@@ -134,7 +135,7 @@
 
 
 
-  <title>Hexo</title>
+  <title>Heydo</title>
   
 
 
@@ -152,7 +153,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
 
   
   
@@ -172,7 +173,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
+        <span class="site-title">Heydo</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -262,13 +263,13 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/04/sorting-function/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
+      <meta itemprop="name" content="Heydo">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="Heydo">
     </span>
 
     
@@ -330,7 +331,8 @@
       
         
           
-            <h2 id="慕课上的例子："><a href="#慕课上的例子：" class="headerlink" title="慕课上的例子："></a>慕课上的例子：</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sortNum</span>(<span class="params">a,b</span>) </span>&#123;</div><div class="line"><span class="keyword">return</span> a - b; <span class="comment">//升序，如降序，把“a - b”该成“b - a”</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> myarr = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">"80"</span>,<span class="string">"16"</span>,<span class="string">"50"</span>,<span class="string">"6"</span>,<span class="string">"100"</span>,<span class="string">"1"</span>);</div><div class="line"><span class="built_in">document</span>.write(myarr + <span class="string">"&lt;br&gt;"</span>);</div><div class="line"><span class="built_in">document</span>.write(myarr.sort(sortNum));</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+            <p>title: 关于排序函数<br>date: 2017-08-04 11:08:06<br>tags: </p>
+<h2 id="慕课上的例子："><a href="#慕课上的例子：" class="headerlink" title="慕课上的例子："></a>慕课上的例子：</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sortNum</span>(<span class="params">a,b</span>) </span>&#123;</div><div class="line"><span class="keyword">return</span> a - b; <span class="comment">//升序，如降序，把“a - b”该成“b - a”</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> myarr = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">"80"</span>,<span class="string">"16"</span>,<span class="string">"50"</span>,<span class="string">"6"</span>,<span class="string">"100"</span>,<span class="string">"1"</span>);</div><div class="line"><span class="built_in">document</span>.write(myarr + <span class="string">"&lt;br&gt;"</span>);</div><div class="line"><span class="built_in">document</span>.write(myarr.sort(sortNum));</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
 <p>####首先，return 是返回一个值到函数外，在调用函数的地方能够接收这个值，在这里，return 返回的是 a-b 的值。</p>
 <h4 id="第二个问题，a-和-b-是怎么回事。"><a href="#第二个问题，a-和-b-是怎么回事。" class="headerlink" title="第二个问题，a 和 b 是怎么回事。"></a>第二个问题，a 和 b 是怎么回事。</h4><p>我们看到 sortNum 函数的调用形式，</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">myarr.sort(sortNum)</div></pre></td></tr></table></figure>
@@ -388,13 +390,13 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/04/test-my-site/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
+      <meta itemprop="name" content="Heydo">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="Heydo">
     </span>
 
     
@@ -507,13 +509,13 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/04/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
+      <meta itemprop="name" content="Heydo">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="Heydo">
     </span>
 
     
@@ -654,8 +656,8 @@
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
-               alt="John Doe" />
-          <p class="site-author-name" itemprop="name">John Doe</p>
+               alt="Heydo" />
+          <p class="site-author-name" itemprop="name">Heydo</p>
            
               <p class="site-description motion-element" itemprop="description"></p>
           
@@ -715,7 +717,7 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">Heydo</span>
 </div>
 
 
