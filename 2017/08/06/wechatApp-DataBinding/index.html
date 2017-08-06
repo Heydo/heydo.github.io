@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="微信小程序 数据绑定," />
 
 
 
@@ -94,16 +94,18 @@
 
 
 
-<meta name="description" content="日拱一卒，功不唐捐">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Heydo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="今天微信小程序遇到一个关于数据绑定的问题：1234567onLoad: function (options) &amp;#123;    var postId = options.id;    var postData = postsData.postList[postId];    //把postData绑定到上面的&quot;data:&quot;中    this.data.postData = postData;">
+<meta name="keywords" content="微信小程序 数据绑定">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信小程序-数据绑定问题">
+<meta property="og:url" content="http://yoursite.com/2017/08/06/wechatApp-DataBinding/index.html">
 <meta property="og:site_name" content="Heydo">
-<meta property="og:description" content="日拱一卒，功不唐捐">
+<meta property="og:description" content="今天微信小程序遇到一个关于数据绑定的问题：1234567onLoad: function (options) &amp;#123;    var postId = options.id;    var postData = postsData.postList[postId];    //把postData绑定到上面的&quot;data:&quot;中    this.data.postData = postData;">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-08-06T07:18:53.397Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Heydo">
-<meta name="twitter:description" content="日拱一卒，功不唐捐">
+<meta name="twitter:title" content="微信小程序-数据绑定问题">
+<meta name="twitter:description" content="今天微信小程序遇到一个关于数据绑定的问题：1234567onLoad: function (options) &amp;#123;    var postId = options.id;    var postData = postsData.postList[postId];    //把postData绑定到上面的&quot;data:&quot;中    this.data.postData = postData;">
 
 
 
@@ -132,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/08/06/wechatApp-DataBinding/"/>
 
 
 
 
 
-  <title>Heydo</title>
+  <title>微信小程序-数据绑定问题 | Heydo</title>
   
 
 
@@ -163,9 +165,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -268,9 +268,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -300,9 +300,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/06/wechatApp-DataBinding/" itemprop="url">微信小程序-数据绑定问题</a></h1>
+          <h1 class="post-title" itemprop="name headline">微信小程序-数据绑定问题</h1>
         
 
         <div class="post-meta">
@@ -374,18 +372,20 @@
       
 
       
-        
-          <p>今天微信小程序遇到一个关于数据绑定的问题：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">onLoad: <span class="function"><span class="keyword">function</span> (<span class="params">options</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> postId = options.id;</div><div class="line">    <span class="keyword">var</span> postData = postsData.postList[postId];</div><div class="line">    <span class="comment">//把postData绑定到上面的"data:"中</span></div><div class="line">    <span class="keyword">this</span>.data.postData = postData;</div><div class="line">    <span class="comment">// console.log(this.data.postData)</span></div><div class="line">  &#125;,</div></pre></td></tr></table></figure></p>
+        <p>今天微信小程序遇到一个关于数据绑定的问题：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">onLoad: <span class="function"><span class="keyword">function</span> (<span class="params">options</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> postId = options.id;</div><div class="line">    <span class="keyword">var</span> postData = postsData.postList[postId];</div><div class="line">    <span class="comment">//把postData绑定到上面的"data:"中</span></div><div class="line">    <span class="keyword">this</span>.data.postData = postData;</div><div class="line">    <span class="comment">// console.log(this.data.postData)</span></div><div class="line">  &#125;,</div></pre></td></tr></table></figure></p>
 <p>老师使用<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.data.postData = postData;</div></pre></td></tr></table></figure></p>
-<p>绑定数据，能够成功显示，但是我自己的demo上就绑定不到数据。
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/08/06/wechatApp-DataBinding/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+<p>绑定数据，能够成功显示，但是我自己的demo上就绑定不到数据。<a id="more"></a></p>
+<p>视频中的老师说：</p>
+<blockquote>
+<p>如果在onLoad()方法中，不是异步的去执行一个数据绑定，则不需要使用this.setData方法，只需要对this.data赋值即可实现数据绑定。</p>
+</blockquote>
+<p>当我改用this.setData方法时，可以完成需求。所以，以后所有的数据绑定都要用this.setData方法？</p>
+<p>这时候，出现了另外一个问题：</p>
+<blockquote>
+<p>调用 Page.prototype.setData 频繁，可能影响性能</p>
+</blockquote>
+<p>这个问题暂时不管，等到学习更深入再去研究。（待续。。。）</p>
+
       
     </div>
     
@@ -400,308 +400,36 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/04/wechatApp-dataName/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Heydo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Heydo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/04/wechatApp-dataName/" itemprop="url">微信小程序：自定义属性命名</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-04T16:30:07+08:00">
-                2017-08-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/微信小程序-数据绑定/" rel="tag"># 微信小程序 数据绑定</a>
           
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <p>这几天学习微信小程序时，遇到一个问题：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;block wx:<span class="keyword">for</span>=<span class="string">"&#123;&#123;posts_key&#125;&#125;"</span> wx:<span class="keyword">for</span>-item=<span class="string">"item"</span>&gt;</div><div class="line">    &lt;view catchtap=<span class="string">"onPostTap"</span> data-postid=<span class="string">"&#123;&#123;item.postId&#125;&#125;"</span>&gt;</div><div class="line">      &lt;template is=<span class="string">"postItem"</span> data=<span class="string">"&#123;&#123;...item&#125;&#125;"</span>&gt;&lt;/template&gt;</div><div class="line">    &lt;<span class="regexp">/view&gt;</span></div><div class="line"><span class="regexp">  &lt;/</span>block&gt;</div></pre></td></tr></table></figure></p>
-<p>要传递的参数postID的自定义属性<kbd>data-postid</kbd>如果用驼峰命名法，写成<kbd>data-postId</kbd>的话。在event.currentTarget.dataset对象中是找不到的。
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/08/04/wechatApp-dataName/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/04/wechatApp-dataName/" rel="next" title="微信小程序：自定义属性命名">
+                <i class="fa fa-chevron-left"></i> 微信小程序：自定义属性命名
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/04/sorting-function/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Heydo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Heydo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/04/sorting-function/" itemprop="url">关于排序函数</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+          <div class="post-nav-prev post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-04T11:08:06+08:00">
-                2017-08-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <h2 id="慕课上的例子："><a href="#慕课上的例子：" class="headerlink" title="慕课上的例子："></a>慕课上的例子：</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sortNum</span>(<span class="params">a,b</span>) </span>&#123;</div><div class="line"><span class="keyword">return</span> a - b; <span class="comment">//升序，如降序，把“a - b”该成“b - a”</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> myarr = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">"80"</span>,<span class="string">"16"</span>,<span class="string">"50"</span>,<span class="string">"6"</span>,<span class="string">"100"</span>,<span class="string">"1"</span>);</div><div class="line"><span class="built_in">document</span>.write(myarr + <span class="string">"&lt;br&gt;"</span>);</div><div class="line"><span class="built_in">document</span>.write(myarr.sort(sortNum));</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
-<h4 id="首先，return-是返回一个值到函数外，在调用函数的地方能够接收这个值，在这里，return-返回的是-a-b-的值。"><a href="#首先，return-是返回一个值到函数外，在调用函数的地方能够接收这个值，在这里，return-返回的是-a-b-的值。" class="headerlink" title="首先，return 是返回一个值到函数外，在调用函数的地方能够接收这个值，在这里，return 返回的是 a-b 的值。"></a>首先，return 是返回一个值到函数外，在调用函数的地方能够接收这个值，在这里，return 返回的是 a-b 的值。</h4><h4 id="第二个问题，a-和-b-是怎么回事。"><a href="#第二个问题，a-和-b-是怎么回事。" class="headerlink" title="第二个问题，a 和 b 是怎么回事。"></a>第二个问题，a 和 b 是怎么回事。</h4><p>我们看到 sortNum 函数的调用形式，</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">myarr.sort(sortNum)</div></pre></td></tr></table></figure>
-<p>是将 sortNum 作为参数传到 sort 函数中，而 sort 函数是<strong>系统自带的数组函数</strong>，由系统实现函数功能。</p>
-<p>sortNum 函数要带两个参数也是系统所规定好的，在进行排序时，系统会按顺序（从下标 0 一个个往后），将数组中的元素作为 a 和 b 参数传入 sortNum 中。</p>
-<p>比如，数组myarr，第一次传入下标 0 元素 myarr[0] 作为 a，下标 1 元素 myarr[1] 作为 b，算出 a-b 的值，&lt;=-1 则 a 在 b 前面，==0 则顺序不变，&gt;=1 则 b 在前 a 在后。比较完 myarr[0] 和 myarr[1]，向后移一位，进行 myarr[1] 和 myarr[2] 的比较，这时，myarr[1] 是 a，myarr[2] 是 b，以此类推。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -711,10 +439,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -722,6 +451,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -965,10 +698,10 @@
 
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
-  
+
 
   
 
