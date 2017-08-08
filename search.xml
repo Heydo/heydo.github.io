@@ -26,7 +26,7 @@
   <entry>
     <title><![CDATA[关于排序函数]]></title>
     <url>%2F2017%2F08%2F04%2Fsorting-function%2F</url>
-    <content type="text"><![CDATA[慕课上的例子：12345678&lt;script type="text/javascript"&gt;function sortNum(a,b) &#123;return a - b; //升序，如降序，把“a - b”该成“b - a”&#125;var myarr = new Array("80","16","50","6","100","1");document.write(myarr + "&lt;br&gt;");document.write(myarr.sort(sortNum));&lt;/script&gt; 首先，return 是返回一个值到函数外，在调用函数的地方能够接收这个值，在这里，return 返回的是 a-b 的值。 第二个问题，a 和 b 是怎么回事。 我们看到 sortNum 函数的调用形式， 1myarr.sort(sortNum) 是将 sortNum 作为参数传到 sort 函数中，而 sort 函数是系统自带的数组函数，由系统实现函数功能。 sortNum 函数要带两个参数也是系统所规定好的，在进行排序时，系统会按顺序（从下标 0 一个个往后），将数组中的元素作为 a 和 b 参数传入 sortNum 中。 比如，数组myarr，第一次传入下标 0 元素 myarr[0] 作为 a，下标 1 元素 myarr[1] 作为 b，算出 a-b 的值，&lt;=-1 则 a 在 b 前面，==0 则顺序不变，&gt;=1 则 b 在前 a 在后。比较完 myarr[0] 和 myarr[1]，向后移一位，进行 myarr[1] 和 myarr[2] 的比较，这时，myarr[1] 是 a，myarr[2] 是 b，以此类推。]]></content>
+    <content type="text"><![CDATA[慕课上的例子： 12345678&lt;script type="text/javascript"&gt;function sortNum(a,b) &#123;return a - b; //升序，如降序，把“a - b”该成“b - a”&#125;var myarr = new Array("80","16","50","6","100","1");document.write(myarr + "&lt;br&gt;");document.write(myarr.sort(sortNum));&lt;/script&gt; 首先，return 是返回一个值到函数外，在调用函数的地方能够接收这个值，在这里，return 返回的是 a-b 的值。 第二个问题，a 和 b 是怎么回事。 我们看到 sortNum 函数的调用形式， 1myarr.sort(sortNum) 是将 sortNum 作为参数传到 sort 函数中，而 sort 函数是系统自带的数组函数，由系统实现函数功能。 sortNum 函数要带两个参数也是系统所规定好的，在进行排序时，系统会按顺序（从下标 0 一个个往后），将数组中的元素作为 a 和 b 参数传入 sortNum 中。 比如，数组myarr，第一次传入下标 0 元素 myarr[0] 作为 a，下标 1 元素 myarr[1] 作为 b，算出 a-b 的值，&lt;=-1 则 a 在 b 前面，==0 则顺序不变，&gt;=1 则 b 在前 a 在后。比较完 myarr[0] 和 myarr[1]，向后移一位，进行 myarr[1] 和 myarr[2] 的比较，这时，myarr[1] 是 a，myarr[2] 是 b，以此类推。]]></content>
       <categories>
         <category>编程</category>
       </categories>
