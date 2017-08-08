@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[微信小程序-数据绑定问题]]></title>
+    <url>%2F2017%2F08%2F06%2FwechatApp-DataBinding%2F</url>
+    <content type="text"><![CDATA[今天微信小程序遇到一个关于数据绑定的问题：1234567onLoad: function (options) &#123; var postId = options.id; var postData = postsData.postList[postId]; //把postData绑定到上面的"data:"中 this.data.postData = postData; // console.log(this.data.postData) &#125;, 老师使用1this.data.postData = postData; 绑定数据，能够成功显示，但是我自己的demo上就绑定不到数据。 视频中的老师说： 如果在onLoad()方法中，不是异步的去执行一个数据绑定，则不需要使用this.setData方法，只需要对this.data赋值即可实现数据绑定。 当我改用this.setData方法时，可以完成需求。所以，以后所有的数据绑定都要用this.setData方法？ 这时候，出现了另外一个问题： 调用 Page.prototype.setData 频繁，可能影响性能 这个问题暂时不管，等到学习更深入再去研究。（待续。。。）]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>微信小程序</tag>
+        <tag>数据</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[微信小程序-自定义属性命名]]></title>
+    <url>%2F2017%2F08%2F04%2FwechatApp-dataName%2F</url>
+    <content type="text"><![CDATA[这几天学习微信小程序时，遇到一个问题：12345&lt;block wx:for="&#123;&#123;posts_key&#125;&#125;" wx:for-item="item"&gt; &lt;view catchtap="onPostTap" data-postid="&#123;&#123;item.postId&#125;&#125;"&gt; &lt;template is="postItem" data="&#123;&#123;...item&#125;&#125;"&gt;&lt;/template&gt; &lt;/view&gt; &lt;/block&gt; 要传递的参数postID的自定义属性data-postid如果用驼峰命名法，写成data-postId的话。在event.currentTarget.dataset对象中是找不到的。我在网上搜到有一篇文章说，data-后面的属性名必须要全部小写。但是经过我的验证以后，应该是这样的：data-后面其实是可以加许多”-“的，例如data-post-id。这样的命名方法在event.currentTarget.dataset对象中，会被格式化为postId。综上，如果在data-后面还有”-“连接的内容时，属性名会自动被转换成驼峰命名。而data-连接着的第一部分就会变成小写，所以data-postId就会变成postid,自然就找不到这个属性了。]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>微信小程序</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[关于排序函数]]></title>
+    <url>%2F2017%2F08%2F04%2Fsorting-function%2F</url>
+    <content type="text"><![CDATA[慕课上的例子：12345678&lt;script type="text/javascript"&gt;function sortNum(a,b) &#123;return a - b; //升序，如降序，把“a - b”该成“b - a”&#125;var myarr = new Array("80","16","50","6","100","1");document.write(myarr + "&lt;br&gt;");document.write(myarr.sort(sortNum));&lt;/script&gt; 首先，return 是返回一个值到函数外，在调用函数的地方能够接收这个值，在这里，return 返回的是 a-b 的值。 第二个问题，a 和 b 是怎么回事。 我们看到 sortNum 函数的调用形式， 1myarr.sort(sortNum) 是将 sortNum 作为参数传到 sort 函数中，而 sort 函数是系统自带的数组函数，由系统实现函数功能。 sortNum 函数要带两个参数也是系统所规定好的，在进行排序时，系统会按顺序（从下标 0 一个个往后），将数组中的元素作为 a 和 b 参数传入 sortNum 中。 比如，数组myarr，第一次传入下标 0 元素 myarr[0] 作为 a，下标 1 元素 myarr[1] 作为 b，算出 a-b 的值，&lt;=-1 则 a 在 b 前面，==0 则顺序不变，&gt;=1 则 b 在前 a 在后。比较完 myarr[0] 和 myarr[1]，向后移一位，进行 myarr[1] 和 myarr[2] 的比较，这时，myarr[1] 是 a，myarr[2] 是 b，以此类推。]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+</search>
