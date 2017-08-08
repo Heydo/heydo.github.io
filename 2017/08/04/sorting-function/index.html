@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="Heydo">
 <meta property="og:description" content="慕课上的例子：12345678&amp;lt;script type=&quot;text/javascript&quot;&amp;gt;function sortNum(a,b) &amp;#123;return a - b; //升序，如降序，把“a - b”该成“b - a”&amp;#125;var myarr = new Array(&quot;80&quot;,&quot;16&quot;,&quot;50&quot;,&quot;6&quot;,&quot;100&quot;,&quot;1&quot;);document.write(myarr +">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-06T07:33:43.353Z">
+<meta property="og:updated_time" content="2017-08-08T14:19:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于排序函数">
 <meta name="twitter:description" content="慕课上的例子：12345678&amp;lt;script type=&quot;text/javascript&quot;&amp;gt;function sortNum(a,b) &amp;#123;return a - b; //升序，如降序，把“a - b”该成“b - a”&amp;#125;var myarr = new Array(&quot;80&quot;,&quot;16&quot;,&quot;50&quot;,&quot;6&quot;,&quot;100&quot;,&quot;1&quot;);document.write(myarr +">
@@ -404,10 +404,9 @@
 我们看到 sortNum 函数的调用形式，
 </code></pre><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">myarr.sort(sortNum)</div></pre></td></tr></table></figure>
 <p>是将 sortNum 作为参数传到 sort 函数中，而 sort 函数是<strong>系统自带的数组函数</strong>，由系统实现函数功能。</p>
-<pre><code>sortNum 函数要带两个参数也是系统所规定好的，在进行排序时，系统会按顺序（从下标 0 一个个往后），将数组中的元素作为 a 和 b 参数传入 sortNum 中。
+<p>sortNum 函数要带两个参数也是系统所规定好的，在进行排序时，系统会按顺序（从下标 0 一个个往后），将数组中的元素作为 a 和 b 参数传入 sortNum 中。</p>
+<p>比如，数组myarr，第一次传入下标 0 元素 myarr[0] 作为 a，下标 1 元素 myarr[1] 作为 b，算出 a-b 的值，&lt;=-1 则 a 在 b 前面，==0 则顺序不变，&gt;=1 则 b 在前 a 在后。比较完 myarr[0] 和 myarr[1]，向后移一位，进行 myarr[1] 和 myarr[2] 的比较，这时，myarr[1] 是 a，myarr[2] 是 b，以此类推。</p>
 
-比如，数组myarr，第一次传入下标 0 元素 myarr[0] 作为 a，下标 1 元素 myarr[1] 作为 b，算出 a-b 的值，&lt;=-1 则 a 在 b 前面，==0 则顺序不变，&gt;=1 则 b 在前 a 在后。比较完 myarr[0] 和 myarr[1]，向后移一位，进行 myarr[1] 和 myarr[2] 的比较，这时，myarr[1] 是 a，myarr[2] 是 b，以此类推。
-</code></pre>
       
     </div>
     
