@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[leetCode-Hamming-Distance]]></title>
+    <url>%2F2017%2F08%2F10%2FleetCode-Hamming-Distance%2F</url>
+    <content type="text"><![CDATA[123]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+        <tag>leetCode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[微信小程序-数据绑定问题]]></title>
     <url>%2F2017%2F08%2F06%2FwechatApp-DataBinding%2F</url>
     <content type="text"><![CDATA[今天微信小程序遇到一个关于数据绑定的问题：1234567onLoad: function (options) &#123; var postId = options.id; var postData = postsData.postList[postId]; //把postData绑定到上面的"data:"中 this.data.postData = postData; // console.log(this.data.postData) &#125;, 老师使用1this.data.postData = postData; 绑定数据，能够成功显示，但是我自己的demo上就绑定不到数据。 视频中的老师说： 如果在onLoad()方法中，不是异步的去执行一个数据绑定，则不需要使用this.setData方法，只需要对this.data赋值即可实现数据绑定。 当我改用this.setData方法时，可以完成需求。所以，以后所有的数据绑定都要用this.setData方法？ 这时候，出现了另外一个问题： 调用 Page.prototype.setData 频繁，可能影响性能 这个问题暂时不管，等到学习更深入再去研究。（待续。。。）]]></content>
