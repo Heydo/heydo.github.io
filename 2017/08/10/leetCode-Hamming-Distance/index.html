@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="123">
+<meta name="description" content="题目    The Hamming distance between two integers is the number of positions at which the corresponding bits are different.    Given two integers x and y, calculate the Hamming distance.    Note:    0 &amp;">
 <meta name="keywords" content="javascript,leetCode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="leetCode-Hamming-Distance">
+<meta property="og:title" content="leetCode-汉明距离">
 <meta property="og:url" content="http://yoursite.com/2017/08/10/leetCode-Hamming-Distance/index.html">
 <meta property="og:site_name" content="Heydo">
-<meta property="og:description" content="123">
+<meta property="og:description" content="题目    The Hamming distance between two integers is the number of positions at which the corresponding bits are different.    Given two integers x and y, calculate the Hamming distance.    Note:    0 &amp;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-10T10:10:55.777Z">
+<meta property="og:updated_time" content="2017-08-10T12:07:05.127Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="leetCode-Hamming-Distance">
-<meta name="twitter:description" content="123">
+<meta name="twitter:title" content="leetCode-汉明距离">
+<meta name="twitter:description" content="题目    The Hamming distance between two integers is the number of positions at which the corresponding bits are different.    Given two integers x and y, calculate the Hamming distance.    Note:    0 &amp;">
 
 
 
@@ -140,7 +140,7 @@
 
 
 
-  <title>leetCode-Hamming-Distance | Heydo</title>
+  <title>leetCode-汉明距离 | Heydo</title>
   
 
 
@@ -324,7 +324,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">leetCode-Hamming-Distance</h1>
+          <h1 class="post-title" itemprop="name headline">leetCode-汉明距离</h1>
         
 
         <div class="post-meta">
@@ -407,7 +407,18 @@
       
 
       
-        <p>123</p>
+        <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><div class="question-description"><br>    The <a href="https://en.wikipedia.org/wiki/Hamming_distance" target="_blank">Hamming distance</a> between two integers is the number of positions at which the corresponding bits are different.<br>    Given two integers <code>x</code> and <code>y</code>, calculate the Hamming distance.<br>    <b>Note:</b><br><br>    0 &le; <code>x</code>, <code>y</code> &lt; 2<sup>31</sup>.<br>    <a id="more"></a><br>    <b>Example:</b><br>    <pre><br>    <b>Input:</b> x = 1, y = 4<br>    <b>Output:</b> 2<br>    <b>Explanation:</b><br>    1   (0 0 0 1)<br>    4   (0 1 0 0)<br>         ?   ?<br>    The above arrows point to positions where the corresponding bits are different.<br>    </pre><br></div>
+
+<h1 id="思路一"><a href="#思路一" class="headerlink" title="思路一"></a>思路一</h1><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>判断两个二进制中不同位置上不同数字的个数，容易让人想到”异或”。</p>
+<blockquote>
+<p><b>异或</b>：<br>a⊕b = (¬a ∧ b) ∨ (a ∧¬b)<br>如果a、b两个值不相同，则异或结果为1。如果a、b两个值相同，异或结果为0。</p>
+</blockquote>
+<p>例子上，1和4的异或值为”101”。<br>然后利用除法和取余得到每一个位数，并且push到一个数组中，得到{0，1，0，1}。<br>另：JavaScript的除法不会只保留整数，所以还需要parseInt()函数舍去小数。<br>最后，再遍历出数组中”1”的个数。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre><code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment">* @param &#123;number&#125; x</span></div><div class="line"><span class="comment">* @param &#123;number&#125; y</span></div><div class="line"><span class="comment">* @return &#123;number&#125;</span></div><div class="line"><span class="comment">*/</span></div><div class="line"><span class="keyword">var</span> hammingDistance = <span class="function"><span class="keyword">function</span>(<span class="params">x, y</span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> x_2 = <span class="built_in">parseInt</span>(x.toString(<span class="number">2</span>));</div><div class="line">	<span class="keyword">var</span> y_2 = <span class="built_in">parseInt</span>(y.toString(<span class="number">2</span>));</div><div class="line">	<span class="keyword">var</span> xor = x_2 ^ y_2;</div><div class="line">	<span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line">	arr.push(<span class="built_in">parseInt</span>(xor/<span class="number">1000</span>));</div><div class="line">	arr.push(<span class="built_in">parseInt</span>(xor%<span class="number">1000</span>/<span class="number">100</span>));</div><div class="line">	arr.push(<span class="built_in">parseInt</span>(xor%<span class="number">1000</span>%<span class="number">100</span>/<span class="number">10</span>));</div><div class="line">	arr.push(<span class="built_in">parseInt</span>(xor%<span class="number">1000</span>%<span class="number">100</span>%<span class="number">10</span>));</div><div class="line">	<span class="keyword">var</span> distance = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</div><div class="line">		<span class="keyword">if</span>(arr[i]==<span class="number">1</span>)&#123;</div><div class="line">			distance = distance + <span class="number">1</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> distance;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</code></pre><h2 id="结果：失败"><a href="#结果：失败" class="headerlink" title="结果：失败"></a>结果：失败</h2><p>因为在获取数组元素的时候，只考虑到了四位，所以，一旦二进制位数变大，算法就失效了。</p>
+<h1 id="思路二"><a href="#思路二" class="headerlink" title="思路二"></a>思路二</h1><h2 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h2><p>将“异或值”转换成字符串，然后用splite(“”)将字符串按位切割成一个数组，再进行遍历。</p>
+<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment">* @param &#123;number&#125; x</span></div><div class="line"><span class="comment">* @param &#123;number&#125; y</span></div><div class="line"><span class="comment">* @return &#123;number&#125;</span></div><div class="line"><span class="comment">*/</span></div><div class="line"><span class="keyword">var</span> hammingDistance = <span class="function"><span class="keyword">function</span>(<span class="params">x, y</span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> xor = (x ^ y).toString(<span class="number">2</span>);</div><div class="line">	<span class="keyword">var</span> xor_str = xor.toString();</div><div class="line">	<span class="keyword">var</span> arr = xor_str.split(<span class="string">""</span>);</div><div class="line">	<span class="keyword">var</span> distance = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</div><div class="line">		<span class="keyword">if</span>(arr[i] == <span class="number">1</span>)&#123;</div><div class="line">			distance++;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> distance;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h2 id="结果：成功"><a href="#结果：成功" class="headerlink" title="结果：成功"></a>结果：成功</h2><p>一开始，竟然使用了splite(“0”)来分割，当遇到“11010”这样的数时自然就出错了。<br>没有一开始就用splite(“”),显然是智商问题。。。</p>
 
       
     </div>
@@ -500,8 +511,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.png"
@@ -598,6 +618,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#思路一"><span class="nav-number">2.</span> <span class="nav-text">思路一</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#思路"><span class="nav-number">2.1.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">2.2.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结果：失败"><span class="nav-number">2.3.</span> <span class="nav-text">结果：失败</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#思路二"><span class="nav-number">3.</span> <span class="nav-text">思路二</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#思路-1"><span class="nav-number">3.1.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码-1"><span class="nav-number">3.2.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结果：成功"><span class="nav-number">3.3.</span> <span class="nav-text">结果：成功</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
