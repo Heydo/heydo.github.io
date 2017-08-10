@@ -6,6 +6,7 @@
     <content type="text"><![CDATA[123]]></content>
       <categories>
         <category>编程</category>
+        <category>leetCode</category>
       </categories>
       <tags>
         <tag>javascript</tag>
