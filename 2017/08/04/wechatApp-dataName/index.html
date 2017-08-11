@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="Heydo">
 <meta property="og:description" content="这几天学习微信小程序时，遇到一个问题：12345&amp;lt;block wx:for=&quot;&amp;#123;&amp;#123;posts_key&amp;#125;&amp;#125;&quot; wx:for-item=&quot;item&quot;&amp;gt;    &amp;lt;view catchtap=&quot;onPostTap&quot; data-postid=&quot;&amp;#123;&amp;#123;item.postId&amp;#125;&amp;#125;&quot;&amp;gt;      &amp;lt;temp">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-10T10:10:50.860Z">
+<meta property="og:updated_time" content="2017-08-11T01:59:22.941Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微信小程序-自定义属性命名">
 <meta name="twitter:description" content="这几天学习微信小程序时，遇到一个问题：12345&amp;lt;block wx:for=&quot;&amp;#123;&amp;#123;posts_key&amp;#125;&amp;#125;&quot; wx:for-item=&quot;item&quot;&amp;gt;    &amp;lt;view catchtap=&quot;onPostTap&quot; data-postid=&quot;&amp;#123;&amp;#123;item.postId&amp;#125;&amp;#125;&quot;&amp;gt;      &amp;lt;temp">
@@ -408,7 +408,7 @@
 
       
         <p>这几天学习微信小程序时，遇到一个问题：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;block wx:<span class="keyword">for</span>=<span class="string">"&#123;&#123;posts_key&#125;&#125;"</span> wx:<span class="keyword">for</span>-item=<span class="string">"item"</span>&gt;</div><div class="line">    &lt;view catchtap=<span class="string">"onPostTap"</span> data-postid=<span class="string">"&#123;&#123;item.postId&#125;&#125;"</span>&gt;</div><div class="line">      &lt;template is=<span class="string">"postItem"</span> data=<span class="string">"&#123;&#123;...item&#125;&#125;"</span>&gt;&lt;/template&gt;</div><div class="line">    &lt;<span class="regexp">/view&gt;</span></div><div class="line"><span class="regexp">  &lt;/</span>block&gt;</div></pre></td></tr></table></figure></p>
-<p>要传递的参数postID的自定义属性<kbd>data-postid</kbd>如果用驼峰命名法，写成<kbd>data-postId</kbd>的话。在event.currentTarget.dataset对象中是找不到的。<a id="more"></a><br>我在网上搜到有一篇文章说，<kbd>data-</kbd>后面的属性名必须要全部小写。<br>但是经过我的验证以后，应该是这样的：<br><kbd>data-</kbd>后面其实是可以加许多”-“的，例如<kbd>data-post-id</kbd>。这样的命名方法在event.currentTarget.dataset对象中，会被格式化为<kbd>postId</kbd>。<br>综上，如果在<kbd>data-</kbd>后面还有”-“连接的内容时，属性名会自动被转换成驼峰命名。而<kbd>data-</kbd>连接着的第一部分就会变成小写，所以<kbd>data-postId</kbd>就会变成<kbd>postid</kbd>,自然就找不到这个属性了。</p>
+<p>要传递的参数postID的自定义属性<code>data-postid</code>如果用驼峰命名法，写成<code>data-postId</code>的话。在event.currentTarget.dataset对象中是找不到的。<a id="more"></a><br>我在网上搜到有一篇文章说，<code>data-</code>后面的属性名必须要全部小写。<br>但是经过我的验证以后，应该是这样的：<br><code>data-</code>后面其实是可以加许多”-“的，例如<code>data-post-id</code>。这样的命名方法在event.currentTarget.dataset对象中，会被格式化为<code>postId</code>。<br>综上，如果在<code>data-</code>后面还有”-“连接的内容时，属性名会自动被转换成驼峰命名。而<code>data-</code>连接着的第一部分就会变成小写，所以<code>data-postId</code>就会变成<code>postid</code>,自然就找不到这个属性了。</p>
 
       
     </div>
