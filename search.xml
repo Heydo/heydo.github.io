@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[测试生成软件]]></title>
+    <url>%2F2017%2F08%2F14%2Ftest%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>测试</category>
+        <category>生成</category>
+        <category>软件</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
+        <tag>生成</tag>
+        <tag>软件</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[leetCode-汉明距离]]></title>
     <url>%2F2017%2F08%2F10%2FleetCode-Hamming-Distance%2F</url>
     <content type="text"><![CDATA[从今天开始 ，把leetcode上刷的题目一边做一遍整理进来，用于日后再看。 题目 The Hamming distance between two integers is the number of positions at which the corresponding bits are different. Given two integers x and y, calculate the Hamming distance. Note: 0 &le; x, y &lt; 231. Example: Input: x = 1, y = 4 Output: 2 Explanation: 1 (0 0 0 1) 4 (0 1 0 0) ? ? The above arrows point to positions where the corresponding bits are different. 思路一思路判断两个二进制中不同位置上不同数字的个数，容易让人想到”异或”。 异或：a⊕b = (¬a ∧ b) ∨ (a ∧¬b)如果a、b两个值不相同，则异或结果为1。如果a、b两个值相同，异或结果为0。 例子上，1和4的异或值为”101”。然后利用除法和取余得到每一个位数，并且push到一个数组中，得到{0，1，0，1}。另：JavaScript的除法不会只保留整数，所以还需要parseInt()函数舍去小数。最后，再遍历出数组中”1”的个数。 代码12345678910111213141516171819202122/*** @param &#123;number&#125; x* @param &#123;number&#125; y* @return &#123;number&#125;*/var hammingDistance = function(x, y) &#123; var x_2 = parseInt(x.toString(2)); var y_2 = parseInt(y.toString(2)); var xor = x_2 ^ y_2; var arr = new Array(); arr.push(parseInt(xor/1000)); arr.push(parseInt(xor%1000/100)); arr.push(parseInt(xor%1000%100/10)); arr.push(parseInt(xor%1000%100%10)); var distance = 0; for (var i = 0; i &lt; arr.length; i++) &#123; if(arr[i]==1)&#123; distance = distance + 1; &#125; &#125; return distance;&#125;; 结果：失败因为在获取数组元素的时候，只考虑到了四位，所以，一旦二进制位数变大，算法就失效了。 思路二思路将“异或值”转换成字符串，然后用splite(“”)将字符串按位切割成一个数组，再进行遍历。 代码1234567891011121314151617/*** @param &#123;number&#125; x* @param &#123;number&#125; y* @return &#123;number&#125;*/var hammingDistance = function(x, y) &#123; var xor = (x ^ y).toString(2); var xor_str = xor.toString(); var arr = xor_str.split(""); var distance = 0; for (var i = 0; i &lt; arr.length; i++) &#123; if(arr[i] == 1)&#123; distance++; &#125; &#125; return distance;&#125;; 结果：成功一开始，竟然使用了splite(“0”)来分割，当遇到“11010”这样的数时自然就出错了。没有一开始就用splite(“”),显然是智商问题。。。 别人家的代码(待续。。。)]]></content>
