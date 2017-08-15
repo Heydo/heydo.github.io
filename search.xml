@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[leetCode-合并二叉树]]></title>
+    <url>%2F2017%2F08%2F15%2FleetCode-Merge-Two-Binary-Trees%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>编程</category>
+        <category>leetCode</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+        <tag>leetCode</tag>
+        <tag>数据结构</tag>
+        <tag>二叉树</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[一键生成Hexo文章框架]]></title>
     <url>%2F2017%2F08%2F14%2FSoftware-CreatHexoPost%2F</url>
     <content type="text"><![CDATA[程序才写完，具体明天写~]]></content>
