@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[把自己的Hexo博客做成小程序（1）————利用restful获取数据]]></title>
+    <url>%2F2017%2F09%2F03%2Fhexo_wechatApp_1%2F</url>
+    <content type="text"><![CDATA[从一位大神的网站（https://devework.com/devework-wxapp.html ） 上看到利用WordPress的REST API,写出了WordPress的小程序。见猎心喜，也想要把自己的hexo博客做成小程序来玩玩。 由于hexo自己不带有REST API，本来想自己写个爬虫。在去写之前搜了下hexo的插件，发现了这个插件：hexo-generator-restful，他可以生成 restful 风格的 json 数据，正好适用于我的需求。 安装好插件以后，先尝试看一下返回的json数据： 图中界面是使用了chrome的JSONView 插件将json数据格式化后的效果。 好了，数据可以拿到了，在小程序中应该怎么获取呢? 首先当然要在小程序平台的设置里添加“服务器域名”-&gt;“request合法域名”为“ https://heydo.github.io ” 。 123456789101112onLoad: function (options) &#123; var that = this; wx.request(&#123; url: "https://heydo.github.io/api/posts.json", success: function (response) &#123; //console.log(response.data) that.setData(&#123; title:response.data.data[0].title, &#125;); &#125; &#125;); &#125;, console.log(response.data)打印出来的内容就是： 当在函数中有个请求(wx.request)时，直接使用this.data会报错：this.setData is not a function.解决方法就是 ：在请求(wx.request)外面添加:var that=this;将success中的 123this.setData(&#123; data1: true &#125;) 改为：123that.setData(&#123; data1: true &#125;) 在相应的WXML文件里写上 123&lt;view class="post-container"&gt; &lt;text class="post-title"&gt;&#123;&#123;title&#125;&#125;&lt;/text&gt;&lt;/view&gt; 就可以在小程序中获取到博客中的文章标题了。]]></content>
+      <categories>
+        <category>编程</category>
+        <category>微信小程序</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>微信小程序</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[leetCode-合并二叉树]]></title>
     <url>%2F2017%2F08%2F15%2FleetCode-Merge-Two-Binary-Trees%2F</url>
     <content type="text"><![CDATA[题目Given two binary trees and imagine that when you put one of them to cover the other, some nodes of the two trees are overlapped while the others are not.You need to merge them into a new binary tree. The merge rule is that if two nodes overlap, then sum node values up as the new value of the merged node. Otherwise, the NOT null node will be used as the node of new tree. Example 1: Input: Tree 1 Tree 2 1 2 / \ / \ 3 2 1 3 / \ \ 5 4 7Output: Merged tree: 3 / \ 4 5 / \ \ 5 4 7Note: The merging process must start from the root nodes of both trees. 给定框架12345678/** * @param &#123;TreeNode&#125; t1 * @param &#123;TreeNode&#125; t2 * @return &#123;TreeNode&#125; */var mergeTrees = function(t1, t2) &#123; // 代码区&#125;; 思路一：递归法思路Javascript中定义二叉树：1234function TreeNode(val) &#123; this.val = val; this.left = this.right = null; &#125; 这里的变量val指的就是当前结点的值。我们把一个大的二叉树看成一个个是只有两层的二叉树的集合。那么，我们就容易获得每一个小二叉树的根节点，而他的叶子的值又是再下一级二叉树的根节点。我们将两个二叉树根节点的和保存到第一个二叉树的根节点上：1t1.val += t2.val; 那么，合并后的左叶子节点的值，可以这样处理：将t1和t2的左叶子递归入原函数，即把两个以t1.left和t2.left为根节点的二级二叉树相加，计算出新的根节点的和赋予到上一层二叉树的左叶子t1.left。（右叶子同上）12t1.left = mergeTrees(t1.left,t2.left);t1.right = mergeTrees(t1.right,t2.right); 这样，通过递归的方法，就计算出每一层级的节点之和。那么，问题来了：如果某一个节点没有左或者右叶子，当我们访问其val属性时，自然是不存在的。所以，还要加上一个判断，当左节点存在右节点不存在时，直接返回存在节点的val，这样就避免了获取不到val属性的问题了。1234if(t1 == null) return t2;if(t2 == null) return t1; 最后返回t1。 代码12345678910var mergeTrees = function(t1, t2) &#123; if(t1 == null) return t2; if(t2 == null) return t1; t1.val += t2.val; t1.left = mergeTrees(t1.left, t2.left); t1.right = mergeTrees(t1.right, t2.right); return t1;&#125;; 结果Accepted 思路二：迭代法（待续）]]></content>
